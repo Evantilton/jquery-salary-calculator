@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="jquery.js"></script>
     <script src="script.js"></script>
-    <script src="style.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <title>Document</title>
+    <h1 id="title">Salary Calculator</h1>
 </head>
+
 <body>
-    
+    <h1> Add Employee</h1>
+    <input placeholder='first name' , class='inputClass' , id='firstNameInput'></input>
+    <input placeholder='last name' , class='inputClass' , id='lastNameInput'></input>
+    <input placeholder='ID' , class='inputClass' , id='employeeNumberInput'></input>
+    <input placeholder='job title' , class='inputClass' , id='jobTitleInput'></input>
+    <input placeholder='annual salary' , class='inputClass' , id='annualSalaryInput'></input>
+    <button id='submitButton'>Submit</button>
+    <h1> Employees</h1>
+    <table id='employeeTable'>
+        <tr>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> ID </th>
+            <th> Job Title </th>
+            <th> Annual Salary </th>
+            <th></th>
+        </tr>
+    </table>
+    <h3>Total Monthly: </h3>
 </body>
+
 </html>
