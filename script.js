@@ -17,7 +17,7 @@ function inputInfo() {
     const idValue = $('#employeeNumberInput').val();
     const jobTitle = $('#jobTitleInput').val();
     const annualSalaryValue = $('#annualSalaryInput').val();
-
+   
     if ((nameValue==='')||(lastNameValue==='')||(idValue==='')||(jobTitle==='')||(annualSalaryValue==='')){
         return alert("Please fill in all fields");
     }
@@ -28,7 +28,7 @@ function inputInfo() {
         <td>${nameValue}</td>
         <td>${lastNameValue}</td>
         <td class='inputClass' >${idValue}</td>
-//because employees could have the same name, I will check my array based on the employee number
+                //because employees could have the same name, I will check my array based on the employee number
         <td>${jobTitle}</td>
         <td>${annualSalaryValue}</td>
         <td>
@@ -56,10 +56,15 @@ function storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalary
 
 function calculateTotal() {
     let totalEverything = 0
+    $('h3').css('background-color','white');
     console.log("in calculate total")
     for (let i = 0; i < storedSalary.length; i++) {
         console.log(Number(storedSalary[i].salary));
         totalEverything = Number(totalEverything) + (Number(storedSalary[i].salary));
+    }
+    if (totalEverything > 20000) {
+        alert("you are overbudget");
+        $('h3').css('background-color','red');
     }
     return ("$" + totalEverything.toFixed(2));
 }
