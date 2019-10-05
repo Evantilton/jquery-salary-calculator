@@ -25,9 +25,10 @@ function inputInfo() {
     storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     $('tbody').append(`
     <tr>
-        <td class='name'>${nameValue}</td>
+        <td>${nameValue}</td>
         <td>${lastNameValue}</td>
-        <td>${idValue}</td>
+        <td class='inputClass' >${idValue}</td>
+//because employees could have the same name, I will check my array based on the employee number
         <td>${jobTitle}</td>
         <td>${annualSalaryValue}</td>
         <td>
@@ -39,16 +40,10 @@ function inputInfo() {
 }
 
 function deleteInfo() {
-    //test
-    let val = $(this).closest('tr').find(".name").text();
+    let val = $(this).closest('tr').find(".inputClass").text();
     console.log("val", val);
-    // let index = storedSalary.find { return storedSalary.name == val});
-    // console.log("index", index);
     deleteFromArray(val, storedSalary);
     console.log("stored salary", storedSalary);
-
-
-    //test
     console.log("in deleteInfo");
     $(this).parent().parent().remove();
     $('#totalMonthly').text(calculateTotal);
@@ -69,15 +64,15 @@ function calculateTotal() {
     return totalEverything;
 }
 
-function deleteFromArray(val, otherVal) {
+function deleteFromArray(val, storedSalary) {
     let oldData = [];
     console.log("deleting from Array");
     for (let i = 0; i < storedSalary.length; i++) {
-        if (val == otherVal[i].name) {
-            console.log("deletingStoredSalary", otherVal[i].salary);
-            otherVal.splice(otherVal[i]);
-            console.log(otherVal);
-            console.log(storedSalary);
+        if (val == storedSalary[i].id) {
+            console.log("deletingStoredSalary", storedSalary[i].salary);
+            storedSalary[i].salary= 0;
+            console.log("newStoredSalary", storedSalary[i]);
+            console.log("full", storedSalary);
 
         }
     }
