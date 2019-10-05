@@ -10,6 +10,7 @@ function readyNow() {
 }
 
 function inputInfo() {
+    
     console.log("in inputField");
     const nameValue = $('#firstNameInput').val();
     const lastNameValue = $('#lastNameInput').val();
@@ -17,10 +18,9 @@ function inputInfo() {
     const jobTitle = $('#jobTitleInput').val();
     const annualSalaryValue = $('#annualSalaryInput').val();
 
-
-
-
-
+    if ((nameValue==='')||(lastNameValue==='')||(idValue==='')||(jobTitle==='')||(annualSalaryValue==='')){
+        return alert("Please fill in all fields");
+    }
     console.log(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     $('tbody').append(`
@@ -61,11 +61,10 @@ function calculateTotal() {
         console.log(Number(storedSalary[i].salary));
         totalEverything = Number(totalEverything) + (Number(storedSalary[i].salary));
     }
-    return totalEverything;
+    return ("$" + totalEverything.toFixed(2));
 }
 
 function deleteFromArray(val, storedSalary) {
-    let oldData = [];
     console.log("deleting from Array");
     for (let i = 0; i < storedSalary.length; i++) {
         if (val == storedSalary[i].id) {
