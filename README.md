@@ -10,9 +10,6 @@ Duration: Weekend
 ## Screen Shot
 ![](SalaryCalculatorScreenshot.jpg)
 
-## Prerequisites
-    Node.js
-
 ## Installation
     fork and clone the repo
     open index.html
