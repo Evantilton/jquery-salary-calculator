@@ -1,10 +1,14 @@
 #title {
     background-color: black;
-    color: white
+    color: white;
+    text-align: center
 }
 h1 {
   font-size:30px;
-    height:50px;
+    height:50px
+}
+body {
+  text-align: center
 }
 button {
   background-color: black; 
@@ -17,6 +21,8 @@ button {
   font-size: 16px;
 }
 table {  
+  margin-left:auto; 
+    margin-right:auto;
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
   width: 640px; 
@@ -47,6 +53,3 @@ tr:nth-child(even) td { background: #F1F1F1; }
 tr:nth-child(odd) td { background: #FEFEFE; }  
 
 tr td:hover { background: #666; color: #FFF; } 
-
-/* //this table layout was something I found at http://cssmenumaker.com/blog/stylish-css-tables-tutorial/ */
-/* I'm not sure how to properly cite this or if I should just change this layout enough that it's original?? */

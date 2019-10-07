@@ -13,9 +13,6 @@ function readyNow() {
 }// end readynow
 
 function inputInfo() {
-    $('.numbersOnly').keyup(function () { 
-        this.value = this.value.replace(/[^0-9\.]/g,'');
-    });
     console.log("in inputField");
     const nameValue = $('#firstNameInput').val();
     const lastNameValue = $('#lastNameInput').val();
@@ -30,6 +27,7 @@ function inputInfo() {
 
     if ((nameValue==='')||(lastNameValue==='')||(idValue==='')||(jobTitle==='')||(annualSalaryValue==='')){
         return alert("Please fill in all fields");
+        //This is to make sure they fill in all fields.
     } if  ((annualSalaryValue))
     console.log(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
