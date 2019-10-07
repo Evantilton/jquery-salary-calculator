@@ -7,25 +7,25 @@ Duration: Weekend
 
     To see the fully functional site, please visit: https://github.com/Evantilton/jquery-salary-calculator
 
-#### Screen Shot
-    <!-- //Need to do -->
+## Screen Shot
+![](SalaryCalculatorScreenshot.jpg)
 
-##### Prerequisites
+## Prerequisites
     Node.js
 
-##### Installation
+## Installation
     fork and clone the repo
     open index.html
 
 
-Built With
+## Built With
     html
     js
     Jquery
     css
 
-License
+## License
     MIT
 
-Support
+## Support
     If you have suggestions or issues, please email me at Evantilton@gmail.com
