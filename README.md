@@ -7,3 +7,10 @@
 Your project description goes here. What problem did you solve? How did you solve it?
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+
+
+
+//NEED TO ADD CHECK BUTTON AND CRAZY FLASH IF OVERBUDGET
+//NEED TO MAKE PRETTY PRETTY
+//NEED TO CLEAR UP CODE
+

@@ -1,5 +1,5 @@
 console.log("in script.js")
-let storedSalary = []
+let storedSalary = [];
 $(document).ready(readyNow);
 
 
@@ -7,20 +7,30 @@ function readyNow() {
     console.log("in readyNow");
     $('#submitButton').on('click', inputInfo);
     $('tbody').on('click', '.deleteButton', deleteInfo);
+    $('#annualSalaryInput').keyup(function () { 
+        this.value = this.value.replace(/[^0-9\.]/g,'');
+    });//I wanted a way to keep out bad inputs
 }
 
 function inputInfo() {
-    
+    $('.numbersOnly').keyup(function () { 
+        this.value = this.value.replace(/[^0-9\.]/g,'');
+    });
     console.log("in inputField");
     const nameValue = $('#firstNameInput').val();
     const lastNameValue = $('#lastNameInput').val();
     const idValue = $('#employeeNumberInput').val();
     const jobTitle = $('#jobTitleInput').val();
     const annualSalaryValue = $('#annualSalaryInput').val();
-   
+    $('#firstNameInput').val('');
+    $('#lastNameInput').val('');
+    $('#employeeNumberInput').val('');
+    $('#jobTitleInput').val('');
+    $('#annualSalaryInput').val('');
+
     if ((nameValue==='')||(lastNameValue==='')||(idValue==='')||(jobTitle==='')||(annualSalaryValue==='')){
         return alert("Please fill in all fields");
-    }
+    } if  ((annualSalaryValue))
     console.log(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     $('tbody').append(`
@@ -30,7 +40,7 @@ function inputInfo() {
         <td class='inputClass' >${idValue}</td>
                 //because employees could have the same name, I will check my array based on the employee number
         <td>${jobTitle}</td>
-        <td>${annualSalaryValue}</td>
+        <td>${makeCurrency(annualSalaryValue)}</td>
         <td>
         <button class="deleteButton"> delete </button>
         </td>
@@ -81,3 +91,8 @@ function deleteFromArray(val, storedSalary) {
         }
     }
 }
+function makeCurrency(numberToMakeCurrency){
+    let currency = ('$') + parseFloat(numberToMakeCurrency).toFixed(2);
+    return currency
+}
+
