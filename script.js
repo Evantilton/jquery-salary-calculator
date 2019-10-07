@@ -31,7 +31,7 @@ function inputInfo() {
     $('#employeeNumberInput').val('');
     $('#jobTitleInput').val('');
     $('#annualSalaryInput').val('');
-    //I could probably target all these instead of making them copy but this works
+    //this clears the inputs
     if ((nameValue==='')||(lastNameValue==='')||(idValue==='')||(jobTitle==='')||(annualSalaryValue==='')){
         return alert("Please fill in all fields");
         //This is to make sure they fill in all fields. 
@@ -79,8 +79,11 @@ function calculateTotal() {
     console.log("in calculate total")
     for (let i = 0; i < storedSalary.length; i++) {
         console.log(Number(storedSalary[i].salary));
-        totalEverything = Number(totalEverything) + (Number(storedSalary[i].salary));
+        totalEverything = (Number(totalEverything) + (Number(storedSalary[i].salary)));
     }
+    totalEverything = totalEverything/12;
+    //this sets it monthly from annual,  I almost forgot this
+    //I didn't notice the difference between annual and monthly on first read
     if (totalEverything > 20000) {
         alert("you are overbudget");
         $('h3').css('background-color','red');
