@@ -14,8 +14,8 @@ function readyNow() {
     $('tbody').on('click', '.deleteButton', deleteInfo);
     //this deletes the info on delete button press 
     //and fixes the Monthly Total
-    $('#annualSalaryInput').keyup(function () { 
-        this.value = this.value.replace(/[^0-9\.]/g,'');
+    $('#annualSalaryInput').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
     });//I wanted a way to keep out bad inputs
 }// end readynow
 
@@ -32,11 +32,11 @@ function inputInfo() {
     $('#jobTitleInput').val('');
     $('#annualSalaryInput').val('');
     //this clears the inputs
-    if ((nameValue==='')||(lastNameValue==='')||(idValue==='')||(jobTitle==='')||(annualSalaryValue==='')){
+    if ((nameValue === '') || (lastNameValue === '') || (idValue === '') || (jobTitle === '') || (annualSalaryValue === '')) {
         return alert("Please fill in all fields");
         //This is to make sure they fill in all fields. 
-    } if  ((annualSalaryValue))
-    console.log(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
+    } if ((annualSalaryValue))
+        console.log(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue);
     $('tbody').append(`
     <tr>
@@ -75,18 +75,18 @@ function storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalary
 function calculateTotal() {
     //this function calculates the sum of the stored salaries.
     let totalEverything = 0
-    $('h3').css('background-color','white');
+    $('h3').css('background-color', 'white');
     console.log("in calculate total")
     for (let i = 0; i < storedSalary.length; i++) {
         console.log(Number(storedSalary[i].salary));
         totalEverything = (Number(totalEverything) + (Number(storedSalary[i].salary)));
     }
-    totalEverything = totalEverything/12;
+    totalEverything = totalEverything / 12;
     //this sets it monthly from annual,  I almost forgot this
     //I didn't notice the difference between annual and monthly on first read
     if (totalEverything > 20000) {
         alert("you are overbudget");
-        $('h3').css('background-color','red');
+        $('h3').css('background-color', 'red');
     }
     return ("$" + totalEverything.toFixed(2));
 } // end calculateTotal
@@ -99,7 +99,7 @@ function deleteFromArray(val, storedSalary) {
     for (let i = 0; i < storedSalary.length; i++) {
         if (val == storedSalary[i].id) {
             console.log("deletingStoredSalary", storedSalary[i].salary);
-            storedSalary[i].salary= 0;
+            storedSalary[i].salary = 0;
             //this sets the Salary to 0 for the deleted employee
             console.log("newStoredSalary", storedSalary[i]);
             console.log("full", storedSalary);
@@ -108,7 +108,7 @@ function deleteFromArray(val, storedSalary) {
     }
 }// end deleteFromArray
 
-function makeCurrency(numberToMakeCurrency){
+function makeCurrency(numberToMakeCurrency) {
     let currency = ('$') + parseFloat(numberToMakeCurrency).toFixed(2);
     return currency
     //this function is to make it into currency format.
