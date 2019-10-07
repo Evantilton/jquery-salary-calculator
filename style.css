@@ -11,10 +11,9 @@ button {
   border: none;
   color: white;
   border-spacing: 10;
-  float: right;
+  float: middle;
   padding: 10px 20px;
   text-align: center;
-  display: inline-block;
   font-size: 16px;
 }
 table {  
@@ -23,10 +22,11 @@ table {
   width: 640px; 
   border-collapse: 
   collapse; border-spacing: 0; 
-  margin-bottom: 50px
+  margin-bottom: 50px;
+  empty-cells: show;
 }
 td, th {  
-  border: 1px solid transparent; 
+  border: 2px solid black; 
   height: 30px; 
   transition: all 0.3s;  
 }
@@ -49,3 +49,4 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 tr td:hover { background: #666; color: #FFF; } 
 
 /* //this table layout was something I found at http://cssmenumaker.com/blog/stylish-css-tables-tutorial/ */
+/* I'm not sure how to properly cite this or if I should just change this layout enough that it's original?? */

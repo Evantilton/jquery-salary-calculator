@@ -1,16 +1,13 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Jquery-Salary-Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This application is for an employer to keep track of employees and monthly budget.  It allows the user to input the employees first and last name, ID number, job title, and annual salary.  It assumes $20,000 is the monthly alloted budget and informs the user if the they have gone over that budget.  It also allows the user to delete the inputted employee and properly tracks that current budget after the employee is deleted.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+## Citations
+Jquery: 
+    /*! jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license */
+CSS:
+    I used the website CSSMenumaker and an article by Russell Taylor for css table design ideas.
 
-
-
-//NEED TO ADD CHECK BUTTON AND CRAZY FLASH IF OVERBUDGET
-//NEED TO MAKE PRETTY PRETTY
-//NEED TO CLEAR UP CODE
 

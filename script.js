@@ -10,7 +10,7 @@ function readyNow() {
     $('#annualSalaryInput').keyup(function () { 
         this.value = this.value.replace(/[^0-9\.]/g,'');
     });//I wanted a way to keep out bad inputs
-}
+}// end readynow
 
 function inputInfo() {
     $('.numbersOnly').keyup(function () { 
@@ -47,7 +47,7 @@ function inputInfo() {
     </tr>`);
 
     $('#totalMonthly').text(calculateTotal);
-}
+}// end inputInfo
 
 function deleteInfo() {
     let val = $(this).closest('tr').find(".inputClass").text();
@@ -57,12 +57,12 @@ function deleteInfo() {
     console.log("in deleteInfo");
     $(this).parent().parent().remove();
     $('#totalMonthly').text(calculateTotal);
-}
+} // end deleteInfo
 
 function storingSalary(nameValue, lastNameValue, idValue, jobTitle, annualSalaryValue) {
     storedSalary.push({ name: nameValue, lastName: lastNameValue, id: idValue, title: jobTitle, salary: annualSalaryValue });
     console.log(storedSalary);
-}
+}// end storingSalary
 
 function calculateTotal() {
     let totalEverything = 0
@@ -77,7 +77,7 @@ function calculateTotal() {
         $('h3').css('background-color','red');
     }
     return ("$" + totalEverything.toFixed(2));
-}
+} // end calculateTotal
 
 function deleteFromArray(val, storedSalary) {
     console.log("deleting from Array");
@@ -90,9 +90,10 @@ function deleteFromArray(val, storedSalary) {
 
         }
     }
-}
+}// end deleteFromArray
+
 function makeCurrency(numberToMakeCurrency){
     let currency = ('$') + parseFloat(numberToMakeCurrency).toFixed(2);
     return currency
-}
+} //end makeCurrency
 
